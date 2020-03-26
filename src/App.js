@@ -1,4 +1,7 @@
 import React,  { useState } from 'react';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 import './App.css';
 
 //const Todo = ({ todo }) => <div className="todo">{todo.text}</div>;
@@ -11,8 +14,18 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
       {todo.text}
 
       <div>
-        <button onClick={() => completeTodo(index)}>Complete</button>
-        <button onClick={() => removeTodo(index)}>x</button>
+        <Button 
+          variant="contained" 
+          color = "default" 
+          onClick={() => completeTodo(index)}>
+            Done
+        </Button>
+        <IconButton 
+          aria-label = "delete">
+          <DeleteIcon fontSize="small"
+            onClick={() => removeTodo(index)}>
+          </DeleteIcon>
+        </IconButton>
       </div>
     </div>
   );
@@ -73,20 +86,22 @@ function App() {
   };
 
   return (
-    <div className="app">
-    <div className="todo-list">
-      {todos.map((todo, index) => (
-        <Todo
-          key={index}
-          index={index}
-          todo={todo}
-          completeTodo={completeTodo}
-          removeTodo={removeTodo}
-        />
-      ))}
-      <TodoForm addTodo={addTodo} />
+    <div className="app-center">
+      <div className="app">
+        <div className="todo-list">
+          {todos.map((todo, index) => (
+            <Todo
+              key={index}
+              index={index}
+              todo={todo}
+              completeTodo={completeTodo}
+              removeTodo={removeTodo}
+            />
+          ))}
+          <TodoForm addTodo={addTodo} />
+        </div>
+      </div>
     </div>
-  </div>
   );
 }
 

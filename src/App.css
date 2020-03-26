@@ -1,24 +1,38 @@
-.app {
-  background: #209cee;
-  padding: 30px;
-  height: 100vh;
+.app-center{
+  text-align: center;
 }
 
-.todo-list {
-  background: #e8e8e8;
-  border-radius: 4px;
-  padding: 5px;
+.app {
+  background:white;
+  padding: 30px;
+  height: 100vh;
+  display: inline-block;
+  min-width: 350px;
   max-width: 400px;
 }
 
+.todo-list {
+  display: block;
+  background: rgba(1, 61, 1, 0.842);
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 400px;
+  text-align: center;
+  color: #FFF;
+  
+}
+
 .todo {
-  background: #fff;
+  background: rgba(231, 174, 18, 0.863);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   padding: 3px 10px;
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-bottom: 6px;
   border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
